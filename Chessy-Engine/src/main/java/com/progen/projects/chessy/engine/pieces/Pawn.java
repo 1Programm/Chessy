@@ -1,14 +1,15 @@
-package MoreFunni.Pieces;
+package com.progen.projects.chessy.engine.pieces;
 
-import MoreFunni.Position;
-import MoreFunni.TeamColor;
+import com.progrn.projects.chessy.core.PieceType;
+import com.progrn.projects.chessy.core.Position;
+import com.progrn.projects.chessy.core.TeamColor;
 
 import java.util.ArrayList;
 
 public class Pawn extends Piece {
 
     public Pawn(TeamColor color, Position position) {
-        super(color, position);
+        super(PieceType.PAWN, color, position);
         blackPieceChar = 'p';
         whitePieceChar = 'P';
     }

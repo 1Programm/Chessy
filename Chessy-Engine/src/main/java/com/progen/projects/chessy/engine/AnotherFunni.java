@@ -1,7 +1,9 @@
-package MoreFunni;
+package com.progen.projects.chessy.engine;
 
-import MoreFunni.Pieces.Pawn;
-import MoreFunni.Pieces.Piece;
+import com.progen.projects.chessy.engine.pieces.Pawn;
+import com.progen.projects.chessy.engine.pieces.Piece;
+import com.progrn.projects.chessy.core.Position;
+import com.progrn.projects.chessy.core.TeamColor;
 
 public class AnotherFunni {
 
@@ -9,6 +11,9 @@ public class AnotherFunni {
 
 
     public static void main(String[] args) {
+        //Diese klasse vllt in sowas wie 'ChessyEngine' umwandeln,
+        //die zumindest die Methoden start() und setView(IChessyView view) hat
+        //und in deiner start() methode muss auch view.start() aufgerufen werden um den JFrame visible zu machen
 
         board = new Piece[8][8];
         for (int i = 0; i < board.length; i++) {

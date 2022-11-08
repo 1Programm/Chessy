@@ -1,4 +1,4 @@
-package MoreFunni;
+package com.progrn.projects.chessy.core;
 
 public class Position {
 

@@ -1,0 +1,15 @@
+<configuration>
+<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+        <pattern>[%-5level] %-60([%-10thread] %class{0}.%M) > %msg%n</pattern>
+    </encoder>
+</appender>
+
+<!--<logger name="com.programm.projects.td.game" level="TRACE" />-->
+
+<!-- LOGGER FOR ALL OTHER -->
+<root level="INFO">
+    <appender-ref ref="STDOUT" />
+</root>
+
+</configuration>
