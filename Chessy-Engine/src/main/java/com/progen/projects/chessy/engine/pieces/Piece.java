@@ -12,9 +12,12 @@ public class Piece {
     public char blackPieceChar;
     public char whitePieceChar;
 
-    public Piece(PieceType type, TeamColor color, Position position) {
+    public Piece(PieceType type, TeamColor color, Position position, char whitePieceChar, char blackPieceChar) {
+        this.type = type;
         this.color = color;
         this.position = position;
+        this.whitePieceChar = whitePieceChar;
+        this.blackPieceChar = blackPieceChar;
     }
 
 

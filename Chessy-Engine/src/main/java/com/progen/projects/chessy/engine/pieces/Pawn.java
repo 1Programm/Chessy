@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Pawn extends Piece {
 
     public Pawn(TeamColor color, Position position) {
-        super(PieceType.PAWN, color, position);
+        super(PieceType.PAWN, color, position, 'P', 'p');
         blackPieceChar = 'p';
         whitePieceChar = 'P';
     }

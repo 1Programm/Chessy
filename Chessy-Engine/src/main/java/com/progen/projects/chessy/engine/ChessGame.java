@@ -1,52 +1,41 @@
 package com.progen.projects.chessy.engine;
 
+import com.progen.projects.chessy.engine.pieces.Knight;
 import com.progen.projects.chessy.engine.pieces.Pawn;
 import com.progen.projects.chessy.engine.pieces.Piece;
 import com.progrn.projects.chessy.core.Position;
 import com.progrn.projects.chessy.core.TeamColor;
 
-public class AnotherFunni {
+public class ChessGame {
 
-    static Piece[][] board;
+    Piece[][] board;
 
 
     public static void main(String[] args) {
         //Diese klasse vllt in sowas wie 'ChessyEngine' umwandeln,
         //die zumindest die Methoden start() und setView(IChessyView view) hat
         //und in deiner start() methode muss auch view.start() aufgerufen werden um den JFrame visible zu machen
-
-        board = new Piece[8][8];
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[0].length; j++) {
-                board[i][j] = null;
+        ChessGame game = new ChessGame();
+        game.board = new Piece[8][8];
+        for (int i = 0; i < game.board.length; i++) {
+            for (int j = 0; j < game.board[0].length; j++) {
+                game.board[i][j] = null;
             }
         }
-        addPiece(new Pawn(TeamColor.White, Position.createPosition(1, 2)));
-        addPiece(new Pawn(TeamColor.Black, Position.createPosition(0, 4)));
+        game.addPiece(new Pawn(TeamColor.White, Position.createPosition(1, 2)));
+        game.addPiece(new Knight(TeamColor.Black, Position.createPosition(0, 3)));
 
-        System.out.println(boardToText());
-        System.out.println(legalMoveInterpreter(1,2,0,3));
+        System.out.println(game.boardToText());
+        System.out.println(game.legalMoveInterpreter(1,2,0,3));
 
-
-        //startGame();
     }
 
-    private static void startGame() {
-
-        boolean running = true;
-        while (running) {
-
-
-        }
-    }
-
-    private static void addPiece(Piece piece) {
+    private  void addPiece(Piece piece) {
         board[piece.position.getX()][piece.position.getY()] = piece;
     }
 
-    private static String boardToText() {
+    private  String boardToText() {
         StringBuilder builder = new StringBuilder();
-
 
         for (int y = board.length - 1; y >= 0; y--) {
             for (int x = 0; x < board[0].length; x++) {
@@ -63,8 +52,7 @@ public class AnotherFunni {
         return builder.toString();
     }
 
-
-    private static boolean legalMoveInterpreter(int sX, int sY, int gX, int gY) {
+    private  boolean legalMoveInterpreter(int sX, int sY, int gX, int gY) {
 
         Piece piece = board[sX][sY];
         if(piece == null) {
@@ -80,29 +68,4 @@ public class AnotherFunni {
 
     }
 
-
-    private static int charToInt(char letter) {
-
-        switch (letter) {
-            case 'a':
-                return 0;
-            case 'b':
-                return 1;
-            case 'c':
-                return 2;
-            case 'd':
-                return 3;
-            case 'e':
-                return 4;
-            case 'f':
-                return 5;
-            case 'g':
-                return 6;
-            case 'h':
-                return 7;
-        }
-        return -1;
-
-
-    }
 }
