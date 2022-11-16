@@ -9,7 +9,7 @@ public interface IChessyController {
      * The UI will call this method when the player clicked a chess piece and the ui wants to draw the possible fields where the player can place their piece
      * MoveInfo has a position and a boolean which specifies if that move would kill a piece of the enemy.
      */
-    MoveInfo[] getValidPositions(int x, int y);
+    MoveInfo[] getValidPositions(Position position);
 
     /**
      * The UI will call this method to tell the engine that the user moved some piece to a new position.

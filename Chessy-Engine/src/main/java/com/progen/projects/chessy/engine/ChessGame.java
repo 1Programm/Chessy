@@ -3,20 +3,25 @@ package com.progen.projects.chessy.engine;
 import com.progen.projects.chessy.engine.pieces.Knight;
 import com.progen.projects.chessy.engine.pieces.Pawn;
 import com.progen.projects.chessy.engine.pieces.Piece;
+import com.progrn.projects.chessy.core.IChessyController;
+import com.progrn.projects.chessy.core.MoveInfo;
 import com.progrn.projects.chessy.core.Position;
 import com.progrn.projects.chessy.core.TeamColor;
 
-public class ChessGame {
+public class ChessGame implements IChessyController {
 
-    Piece[][] board;
+    private final Piece[][] board;
+
+    public ChessGame(int x, int y) {
+        board = new Piece[x][y];
+    }
 
 
     public static void main(String[] args) {
         //Diese klasse vllt in sowas wie 'ChessyEngine' umwandeln,
         //die zumindest die Methoden start() und setView(IChessyView view) hat
         //und in deiner start() methode muss auch view.start() aufgerufen werden um den JFrame visible zu machen
-        ChessGame game = new ChessGame();
-        game.board = new Piece[8][8];
+        ChessGame game = new ChessGame(8,8);
         for (int i = 0; i < game.board.length; i++) {
             for (int j = 0; j < game.board[0].length; j++) {
                 game.board[i][j] = null;
@@ -68,4 +73,22 @@ public class ChessGame {
 
     }
 
+    private Position[] getLegalMoves() {
+        return null;
+    }
+
+    @Override
+    public MoveInfo[] getValidPositions(Position position) {
+        return new MoveInfo[0];
+    }
+
+    @Override
+    public void moved(Position prevPosition, Position newPosition) {
+
+    }
+
+    @Override
+    public void giveUp() {
+
+    }
 }
